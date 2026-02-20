@@ -43,8 +43,8 @@ scanf("%d", &pontos1);
 
 // Cálculo da densidade demográfica e do PIB per capita da primeira carta
 
-densidade1 = populacao1 / area1;
-pib_per_capita1 = pib1 / populacao1;
+densidade1 = (float) populacao1 / area1;
+pib_per_capita1 = (float) (pib1 * 1000000000.0) / populacao1;
 
 printf("\nCadastro da primeira carta realizado com sucesso! \n");
 printf("Vamos cadastrar os dados da segunda carta: \n");
@@ -74,8 +74,8 @@ scanf("%d", &pontos2);
 
 // Cálculo da densidade demográfica e do PIB per capita da segunda carta
 
-densidade2 = populacao2 / area2;
-pib_per_capita2 = pib2 / populacao2;
+densidade2 = (float) populacao2 / area2;
+pib_per_capita2 = (float) (pib2 * 1000000000.0) / populacao2;
 
 printf("\nCadastro da segunda carta realizado com sucesso! \n");
 printf("Cartas cadastradas com sucesso! \n");
