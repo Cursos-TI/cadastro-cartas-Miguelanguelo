@@ -15,13 +15,6 @@ float densidade1 , densidade2 ;
 float pib_per_capita1 , pib_per_capita2 ;
 float superpoder1 , superpoder2 ;
 
-int comparacao_populacao;
-int comparacao_area;
-int comparacao_pib;
-int comparacao_pontos;
-int comparacao_densidade;
-int comparacao_pib_per_capita;
-int comparacao_superpoder;
 
 printf("Bem vindo ao Super Trunfo\n");
 printf("Vamos cadastrar os dados da primeira carta: \n");
@@ -118,24 +111,40 @@ printf("Densidade demográfica: %.2f habitantes por Km²\n", densidade2);
 printf("PIB per capita: %.2f reais por habitante\n", pib_per_capita2);
 printf("Superpoder: %.2f\n", superpoder2);
 
-comparacao_populacao = (populacao1 > populacao2);
-comparacao_area = (area1 > area2);
-comparacao_pib = (pib1 > pib2);
-comparacao_pontos = (pontos1 > pontos2);
-comparacao_densidade = (densidade1 < densidade2);
-comparacao_pib_per_capita = (pib_per_capita1 > pib_per_capita2);
-comparacao_superpoder = (superpoder1 > superpoder2);
+printf("\n Agora vamos comparar as cartas ! \n");
+printf("\nA carta com o maior valor em cada categoria vence. \n");
+printf("Com exceção da densidade demográfica, onde a carta com o menor valor vence. \n");
 
-printf("\nComparação entre as cartas: \n");
-printf("Regra do jogo : Valor 1 para a Carta1 e valor 0 para a Carta2: \n");
-printf("OBS : Para a comparação da densidade demográfica, o menor valor é considerado melhor no jogo.\n");
-printf("\nPopulação: Carta 1 ou Carta 2 : %d\n", comparacao_populacao);
-printf("Área: Carta 1 ou Carta 2 : %d\n", comparacao_area);
-printf("PIB: Carta 1 ou Carta 2 : %d\n", comparacao_pib);
-printf("Pontos turísticos: Carta 1 ou Carta 2 : %d\n", comparacao_pontos);
-printf("Densidade demográfica: Carta 1 ou Carta 2 : %d\n", comparacao_densidade);
-printf("PIB per capita: Carta 1 ou Carta 2 : %d\n", comparacao_pib_per_capita);
-printf("Superpoder: Carta 1 ou Carta 2 : %d\n", comparacao_superpoder);
+
+if (populacao1 > populacao2) {
+    printf("\nCarta 1 Venceu, pois sua população (%d) é maior que a da carta 2 (%d).\n", populacao1, populacao2);
+} else if (populacao2 > populacao1) {
+    printf("\nCarta 2 Venceu, pois sua população (%d) é maior que a da carta 1 (%d).\n", populacao2, populacao1);
+}
+
+if (area1 > area2) {
+    printf("\nCarta 1 Venceu, pois sua área (%.2f) é maior que a da carta 2 (%.2f).\n", area1, area2);
+} else if (area2 > area1) {
+    printf("\nCarta 2 Venceu, pois sua área (%.2f) é maior que a da carta 1 (%.2f).\n", area2, area1);
+}
+
+if (pib1 > pib2) {
+    printf("\nCarta 1 Venceu, pois seu PIB (%.2f bilhões) é maior que o da carta 2 (%.2f bilhões).\n", pib1, pib2);
+} else if (pib2 > pib1) {
+    printf("\nCarta 2 Venceu, pois seu PIB (%.2f bilhões) é maior que o da carta 1 (%.2f bilhões).\n", pib2, pib1);
+}
+
+if (pontos1 > pontos2) {
+    printf("\nCarta 1 Venceu, pois seus pontos turísticos (%d) é maior que os da carta 2 (%d).\n", pontos1, pontos2);
+} else if (pontos2 > pontos1) {
+    printf("\nCarta 2 Venceu, pois seus pontos turísticos (%d) é maior que os da carta 1 (%d).\n", pontos2, pontos1);
+}
+
+if (densidade1 < densidade2) {
+    printf("\nCarta 1 Venceu, pois sua densidade demográfica (%.2f) é menor que a da carta 2 (%.2f).\n", densidade1, densidade2);
+} else if (densidade2 < densidade1) {
+    printf("\nCarta 2 Venceu, pois sua densidade demográfica (%.2f) é menor que a da carta 1 (%.2f).\n", densidade2, densidade1);
+}
 
 return 0;
 
