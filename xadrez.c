@@ -18,7 +18,8 @@ float pib_per_capita1 , pib_per_capita2 ;
 float superpoder1 , superpoder2 ;
 
 int opcao;
-int escolha_aleatoria;
+int resultado1 , resultado2 ;
+int escolha_aleatoria1 , escolha_aleatoria2;
 srand(time(0));
 
 printf("Bem vindo ao Super Trunfo\n");
@@ -145,16 +146,18 @@ printf("PIB per capita: %.2f reais por habitante\n", pib_per_capita2);
 printf("Superpoder: %.2f\n", superpoder2);
 
 printf("\n ### Chegou a hora da comparação ### ! \n");
-printf("Será escolhido aleatoriamente um atributo para comparar as cartas. \n");
+printf("Será escolhido aleatoriamente dois atributos para comparar as cartas. \n");
 printf("\nA carta com o maior valor em cada categoria vence. \n");
 printf("Com exceção da densidade demográfica, onde a carta com o menor valor vence. \n");
 
-escolha_aleatoria = rand() % 5 + 1;
+escolha_aleatoria1 = rand() % 6 + 1;
+escolha_aleatoria2 = rand() % 6 + 1;
 
-switch(escolha_aleatoria) {
+switch(escolha_aleatoria1) {
     case 1:
         printf("\nAtributo escolhido: POPULAÇÂO\n");
 if (populacao1 > populacao2) {
+       resultado1 = populacao1 > populacao2 ? 1 : 0;
     printf("\nCarta 1 Venceu, pois sua população (%d) é maior que a da carta 2 (%d).\n", populacao1, populacao2);
 } else if (populacao2 > populacao1) {
     printf("\nCarta 2 Venceu, pois sua população (%d) é maior que a da carta 1 (%d).\n", populacao2, populacao1);
@@ -166,6 +169,7 @@ if (populacao1 > populacao2) {
     case 2:
         printf("\nAtributo escolhido: ÁREA\n");
 if (area1 > area2) {
+     resultado1 = area1 > area2 ? 1 : 0;
     printf("\nCarta 1 Venceu, pois sua área (%.2f) é maior que a da carta 2 (%.2f).\n", area1, area2);
 } else if (area2 > area1) {
     printf("\nCarta 2 Venceu, pois sua área (%.2f) é maior que a da carta 1 (%.2f).\n", area2, area1);
@@ -177,6 +181,7 @@ if (area1 > area2) {
         case 3:
             printf("\nAtributo escolhido: PIB\n");
 if (pib1 > pib2) {
+        resultado1 = pib1 > pib2 ? 1 : 0;
     printf("\nCarta 1 Venceu, pois seu PIB (%.2f bilhões) é maior que o da carta 2 (%.2f bilhões).\n", pib1, pib2);
 } else if (pib2 > pib1) {
     printf("\nCarta 2 Venceu, pois seu PIB (%.2f bilhões) é maior que o da carta 1 (%.2f bilhões).\n", pib2, pib1);
@@ -188,6 +193,7 @@ if (pib1 > pib2) {
         case 4:
             printf("\nAtributo escolhido: PONTOS TURÍSTICOS\n");
 if (pontos1 > pontos2) {
+        resultado2 = pontos1 > pontos2 ? 1 : 0;
     printf("\nCarta 1 Venceu, pois seus pontos turísticos (%d) é maior que os da carta 2 (%d).\n", pontos1, pontos2);
 } else if (pontos2 > pontos1) {
     printf("\nCarta 2 Venceu, pois seus pontos turísticos (%d) é maior que os da carta 1 (%d).\n", pontos2, pontos1);
@@ -199,6 +205,7 @@ if (pontos1 > pontos2) {
         case 5:
             printf("\nAtributo escolhido: DENSIDADE DEMOGRÁFICA\n");
 if (densidade1 < densidade2) {
+        resultado2 = densidade1 < densidade2 ? 1 : 0;
     printf("\nCarta 1 Venceu, pois sua densidade demográfica (%.2f) é menor que a da carta 2 (%.2f).\n", densidade1, densidade2);
 } else if (densidade2 < densidade1) {
     printf("\nCarta 2 Venceu, pois sua densidade demográfica (%.2f) é menor que a da carta 1 (%.2f).\n", densidade2, densidade1);
@@ -206,9 +213,116 @@ if (densidade1 < densidade2) {
     printf("\nEmpate na categoria densidade demográfica, ambas as cartas têm a mesma densidade (%.2f).\n", densidade1);
 } 
     break;
-
+    
+        case 6:
+            printf("\nAtributo escolhido: PIB PER CAPITA\n");
+if (pib_per_capita1 > pib_per_capita2) {
+        resultado1 = pib_per_capita1 > pib_per_capita2 ? 1 : 0;
+    printf("\nCarta 1 Venceu, pois seu PIB per capita (%.2f) é maior que o da carta 2 (%.2f).\n", pib_per_capita1, pib_per_capita2);
+} else if (pib_per_capita2 > pib_per_capita1) {
+    printf("\nCarta 2 Venceu, pois seu PIB per capita (%.2f) é maior que o da carta 1 (%.2f).\n", pib_per_capita2, pib_per_capita1);
+} else {
+    printf("\nEmpate na categoria PIB per capita, ambas as cartas têm o mesmo PIB per capita (%.2f).\n", pib_per_capita1);
 }
+    break;
+    
+}
+
+
+
+
+
+
+
+  switch (escolha_aleatoria2) {
+    case 1:
+        printf("\nAtributo escolhido: POPULAÇÂO\n");
+if (populacao1 > populacao2) {
+        resultado2 = populacao1 > populacao2 ? 1 : 0;
+    printf("\nCarta 1 Venceu, pois sua população (%d) é maior que a da carta 2 (%d).\n", populacao1, populacao2);
+} else if (populacao2 > populacao1) {
+    printf("\nCarta 2 Venceu, pois sua população (%d) é maior que a da carta 1 (%d).\n", populacao2, populacao1);
+} else {
+    printf("\nEmpate na categoria população, ambas as cartas têm a mesma população (%d).\n", populacao1);
+}
+  break;
+  
+    case 2:
+        printf("\nAtributo escolhido: ÁREA\n");
+if (area1 > area2) {
+        resultado2 = area1 > area2 ? 1 : 0;
+    printf("\nCarta 1 Venceu, pois sua área (%.2f) é maior que a da carta 2 (%.2f).\n", area1, area2);
+} else if (area2 > area1) {
+    printf("\nCarta 2 Venceu, pois sua área (%.2f) é maior que a da carta 1 (%.2f).\n", area2, area1);
+} else {
+    printf("\nEmpate na categoria área, ambas as cartas têm a mesma área (%.2f).\n", area1);
+}
+    break;
+    
+        case 3:
+            printf("\nAtributo escolhido: PIB\n");
+if (pib1 > pib2) {
+        resultado2 = pib1 > pib2 ? 1 : 0;
+    printf("\nCarta 1 Venceu, pois seu PIB (%.2f bilhões) é maior que o da carta 2 (%.2f bilhões).\n", pib1, pib2);
+} else if (pib2 > pib1) {
+    printf("\nCarta 2 Venceu, pois seu PIB (%.2f bilhões) é maior que o da carta 1 (%.2f bilhões).\n", pib2, pib1);
+} else {
+    printf("\nEmpate na categoria PIB, ambas as cartas têm o mesmo PIB (%.2f bilhões).\n", pib1);
+}
+    break;
+    
+        case 4:
+            printf("\nAtributo escolhido: PONTOS TURÍSTICOS\n");
+if (pontos1 > pontos2) {
+        resultado2 = pontos1 > pontos2 ? 1 : 0;
+    printf("\nCarta 1 Venceu, pois seus pontos turísticos (%d) é maior que os da carta 2 (%d).\n", pontos1, pontos2);
+} else if (pontos2 > pontos1) {
+    printf("\nCarta 2 Venceu, pois seus pontos turísticos (%d) é maior que os da carta 1 (%d).\n", pontos2, pontos1);
+} else {
+    printf("\nEmpate na categoria pontos turísticos, ambas as cartas têm o mesmo número de pontos turísticos (%d).\n", pontos1);
+}
+    break;
+    
+        case 5:
+            printf("\nAtributo escolhido: DENSIDADE DEMOGRÁFICA\n");
+if (densidade1 < densidade2) {
+        resultado2 = densidade1 < densidade2 ? 1 : 0;
+    printf("\nCarta 1 Venceu, pois sua densidade demográfica (%.2f) é menor que a da carta 2 (%.2f).\n", densidade1, densidade2);
+} else if (densidade2 < densidade1) {
+    printf("\nCarta 2 Venceu, pois sua densidade demográfica (%.2f) é menor que a da carta 1 (%.2f).\n", densidade2, densidade1);
+} else {
+    printf("\nEmpate na categoria densidade demográfica, ambas as cartas têm a mesma densidade (%.2f).\n", densidade1);
+} 
+    break;
+    
+        case 6:
+            printf("\nAtributo escolhido: PIB PER CAPITA\n");
+if (pib_per_capita1 > pib_per_capita2) {
+        resultado2 = pib_per_capita1 > pib_per_capita2 ? 1 : 0;
+    printf("\nCarta 1 Venceu, pois seu PIB per capita (%.2f) é maior que o da carta 2 (%.2f).\n", pib_per_capita1, pib_per_capita2);
+} else if (pib_per_capita2 > pib_per_capita1) {
+    printf("\nCarta 2 Venceu, pois seu PIB per capita (%.2f) é maior que o da carta 1 (%.2f).\n", pib_per_capita2, pib_per_capita1);
+} else {
+    printf("\nEmpate na categoria PIB per capita, ambas as cartas têm o mesmo PIB per capita (%.2f).\n", pib_per_capita1);
+}
+    break;
+    
+}
+
+       if (resultado1 == 1 && resultado2 == 1) {
+          printf("\nA Carta 1 venceu, pois prevaleceu nos dois atributos");
+
+     }  else if (resultado1 == 0 && resultado2 == 0)  {
+          printf("\nA Carta 2 venceu, pois prevaleceu nos dois atributos"); 
+
+     }  else {
+          printf("\nEMPATE!, nenhuma carta prevaleceu nos dois atributos");
+
+     }  
+
+     
+    
 
 return 0;
 
-}
+    }
