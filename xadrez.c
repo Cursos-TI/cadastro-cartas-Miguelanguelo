@@ -37,9 +37,9 @@ switch(opcao) {
         printf("\nRegras do jogo:\n");
         printf("1. O jogo consiste em comparar duas cartas, cada uma representando um estado brasileiro.\n");
         printf("2. Cada carta possui os seguintes atributos: população, área, PIB, pontos turísticos, densidade demográfica e PIB per capita.\n");
-        printf("3. Será escolhido aleatoriamente um atributo para comparar as cartas.\n");
-        printf("4. A carta com o maior valor no atributo escolhido vence, exceto na categoria densidade demográfica, onde a carta com o menor valor vence.\n");
-        printf("5. O objetivo é vencer o maior número de comparações possível.\n");
+        printf("3. Será escolhido aleatoriamente dois atributos para comparar as cartas.\n");
+        printf("4. A carta que prevalecer nos dois atributos escolhidos vence.\n");
+        printf("5. Para a densidade populacional a regra é inversa, o menor valor prevalece.\n");
         printf("6. Divirta-se jogando e aprendendo sobre os estados brasileiros!\n");
         printf("\nPressione 1 para iniciar o jogo: \n");
         scanf("%d", &opcao);
@@ -147,15 +147,15 @@ printf("Superpoder: %.2f\n", superpoder2);
 
 printf("\n ### Chegou a hora da comparação ### ! \n");
 printf("Será escolhido aleatoriamente dois atributos para comparar as cartas. \n");
-printf("\nA carta com o maior valor em cada categoria vence. \n");
-printf("Com exceção da densidade demográfica, onde a carta com o menor valor vence. \n");
+printf("A carta que prevalecer nos dois vence , se não...EMPATE! \n");
+printf("\n OBS : Na densidade demográfica , o menor valor prevalece. \n");
 
 escolha_aleatoria1 = rand() % 6 + 1;
 escolha_aleatoria2 = rand() % 6 + 1;
 
 switch(escolha_aleatoria1) {
     case 1:
-        printf("\nAtributo escolhido: POPULAÇÂO\n");
+        printf("\n Primeiro Atributo escolhido: POPULAÇÂO\n");
 if (populacao1 > populacao2) {
        resultado1 = populacao1 > populacao2 ? 1 : 0;
     printf("\nCarta 1 Venceu, pois sua população (%d) é maior que a da carta 2 (%d).\n", populacao1, populacao2);
@@ -167,7 +167,7 @@ if (populacao1 > populacao2) {
   break;
   
     case 2:
-        printf("\nAtributo escolhido: ÁREA\n");
+        printf("\n Primeiro Atributo escolhido: ÁREA\n");
 if (area1 > area2) {
      resultado1 = area1 > area2 ? 1 : 0;
     printf("\nCarta 1 Venceu, pois sua área (%.2f) é maior que a da carta 2 (%.2f).\n", area1, area2);
@@ -179,7 +179,7 @@ if (area1 > area2) {
     break;
     
         case 3:
-            printf("\nAtributo escolhido: PIB\n");
+            printf("\n Primeiro Atributo escolhido: PIB\n");
 if (pib1 > pib2) {
         resultado1 = pib1 > pib2 ? 1 : 0;
     printf("\nCarta 1 Venceu, pois seu PIB (%.2f bilhões) é maior que o da carta 2 (%.2f bilhões).\n", pib1, pib2);
@@ -191,7 +191,7 @@ if (pib1 > pib2) {
     break;
     
         case 4:
-            printf("\nAtributo escolhido: PONTOS TURÍSTICOS\n");
+            printf("\n Primeiro Atributo escolhido: PONTOS TURÍSTICOS\n");
 if (pontos1 > pontos2) {
         resultado2 = pontos1 > pontos2 ? 1 : 0;
     printf("\nCarta 1 Venceu, pois seus pontos turísticos (%d) é maior que os da carta 2 (%d).\n", pontos1, pontos2);
@@ -203,7 +203,7 @@ if (pontos1 > pontos2) {
     break;
     
         case 5:
-            printf("\nAtributo escolhido: DENSIDADE DEMOGRÁFICA\n");
+            printf("\n Primeiro Atributo escolhido: DENSIDADE DEMOGRÁFICA\n");
 if (densidade1 < densidade2) {
         resultado2 = densidade1 < densidade2 ? 1 : 0;
     printf("\nCarta 1 Venceu, pois sua densidade demográfica (%.2f) é menor que a da carta 2 (%.2f).\n", densidade1, densidade2);
@@ -215,7 +215,7 @@ if (densidade1 < densidade2) {
     break;
     
         case 6:
-            printf("\nAtributo escolhido: PIB PER CAPITA\n");
+            printf("\n Primeiro Atributo escolhido: PIB PER CAPITA\n");
 if (pib_per_capita1 > pib_per_capita2) {
         resultado1 = pib_per_capita1 > pib_per_capita2 ? 1 : 0;
     printf("\nCarta 1 Venceu, pois seu PIB per capita (%.2f) é maior que o da carta 2 (%.2f).\n", pib_per_capita1, pib_per_capita2);
@@ -236,7 +236,7 @@ if (pib_per_capita1 > pib_per_capita2) {
 
   switch (escolha_aleatoria2) {
     case 1:
-        printf("\nAtributo escolhido: POPULAÇÂO\n");
+        printf("\n Segundo Atributo escolhido: POPULAÇÂO\n");
 if (populacao1 > populacao2) {
         resultado2 = populacao1 > populacao2 ? 1 : 0;
     printf("\nCarta 1 Venceu, pois sua população (%d) é maior que a da carta 2 (%d).\n", populacao1, populacao2);
@@ -248,7 +248,7 @@ if (populacao1 > populacao2) {
   break;
   
     case 2:
-        printf("\nAtributo escolhido: ÁREA\n");
+        printf("\n Segundo Atributo escolhido: ÁREA\n");
 if (area1 > area2) {
         resultado2 = area1 > area2 ? 1 : 0;
     printf("\nCarta 1 Venceu, pois sua área (%.2f) é maior que a da carta 2 (%.2f).\n", area1, area2);
@@ -260,7 +260,7 @@ if (area1 > area2) {
     break;
     
         case 3:
-            printf("\nAtributo escolhido: PIB\n");
+            printf("\n Segundo Atributo escolhido: PIB\n");
 if (pib1 > pib2) {
         resultado2 = pib1 > pib2 ? 1 : 0;
     printf("\nCarta 1 Venceu, pois seu PIB (%.2f bilhões) é maior que o da carta 2 (%.2f bilhões).\n", pib1, pib2);
@@ -272,7 +272,7 @@ if (pib1 > pib2) {
     break;
     
         case 4:
-            printf("\nAtributo escolhido: PONTOS TURÍSTICOS\n");
+            printf("\n Segundo Atributo escolhido: PONTOS TURÍSTICOS\n");
 if (pontos1 > pontos2) {
         resultado2 = pontos1 > pontos2 ? 1 : 0;
     printf("\nCarta 1 Venceu, pois seus pontos turísticos (%d) é maior que os da carta 2 (%d).\n", pontos1, pontos2);
@@ -284,7 +284,7 @@ if (pontos1 > pontos2) {
     break;
     
         case 5:
-            printf("\nAtributo escolhido: DENSIDADE DEMOGRÁFICA\n");
+            printf("\n Segundo Atributo escolhido: DENSIDADE DEMOGRÁFICA\n");
 if (densidade1 < densidade2) {
         resultado2 = densidade1 < densidade2 ? 1 : 0;
     printf("\nCarta 1 Venceu, pois sua densidade demográfica (%.2f) é menor que a da carta 2 (%.2f).\n", densidade1, densidade2);
@@ -296,7 +296,7 @@ if (densidade1 < densidade2) {
     break;
     
         case 6:
-            printf("\nAtributo escolhido: PIB PER CAPITA\n");
+            printf("\n Segundo Atributo escolhido: PIB PER CAPITA\n");
 if (pib_per_capita1 > pib_per_capita2) {
         resultado2 = pib_per_capita1 > pib_per_capita2 ? 1 : 0;
     printf("\nCarta 1 Venceu, pois seu PIB per capita (%.2f) é maior que o da carta 2 (%.2f).\n", pib_per_capita1, pib_per_capita2);
@@ -308,6 +308,8 @@ if (pib_per_capita1 > pib_per_capita2) {
     break;
     
 }
+
+    
 
        if (resultado1 == 1 && resultado2 == 1) {
           printf("\nA Carta 1 venceu, pois prevaleceu nos dois atributos");
