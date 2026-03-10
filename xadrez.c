@@ -6,8 +6,6 @@ int main() {
 
 // Variáveis para armazenar os dados das cartas
 
-char estado1 , estado2;             
-char codigo1 [20], codigo2 [20];    
 char nome1 [20], nome2 [20];       
 int populacao1 , populacao2 ;    
 float area1 , area2 ;
@@ -17,18 +15,31 @@ float densidade1 , densidade2 ;
 float pib_per_capita1 , pib_per_capita2 ;
 float superpoder1 , superpoder2 ;
 
+// Variávies para calcular valores e resultados das cartas
+
 int opcao;
 int resultado1 , resultado2 ;
 int escolha_aleatoria1 , escolha_aleatoria2;
 srand(time(0));
 
-printf("Bem vindo ao Super Trunfo\n");
-printf("1 - INICIAR JOGO\n");
+/*  O código a seguir, cria um menu
+
+  interativo simples com duas opções
+
+  e contem a estrutura de repetição [do while]
+
+  para que se atinja a opção 1 desejada. */
+
+printf("\n### Bem vindo ao Super Trunfo ###\n");
+
+do {
+
+printf("\n1 - INICIAR JOGO\n");
 printf("2 - REGRAS DO JOGO\n");
 printf("Digite a opção desejada: \n");
 scanf("%d", &opcao);
 
-switch(opcao) {
+ switch(opcao) {
     
     case 1:
         printf("\nIniciando o jogo...\n");
@@ -40,40 +51,33 @@ switch(opcao) {
         printf("3. Será escolhido aleatoriamente dois atributos para comparar as cartas.\n");
         printf("4. A carta que prevalecer nos dois atributos escolhidos vence.\n");
         printf("5. Para a densidade populacional a regra é inversa, o menor valor prevalece.\n");
-        printf("6. Divirta-se jogando e aprendendo sobre os estados brasileiros!\n");
-        printf("\nPressione 1 para iniciar o jogo: \n");
-        scanf("%d", &opcao);
-        printf("\nIniciando o jogo...\n");
+        printf("6. Um ótimo jogo para você!\n");        
     break;
     default:
-        printf("\nOpção inválida. Iniciando o jogo...\n");
+        printf("\nOpção inválida.\n");
     break;
     
 }
+
+ } while (opcao != 1);
 
 printf("Vamos cadastrar os dados da primeira carta: \n");
 
 // Cadastro da primeira carta
 
-printf("\nDigite a letra do estado : \n"); 
-scanf(" %c", &estado1);
-
-printf("Digite o codigo do estado : \n"); 
-scanf("%s",codigo1);
-
-printf("Digite o nome do estado : \n");
+printf("\nDigite o nome do estado : \n");
 scanf("%s", nome1);
 
-printf("Digite a população do estado : \n");
+printf("\nDigite a população do estado : \n");
 scanf("%d", &populacao1);
 
-printf("Digite a área do estado : \n");
+printf("\nDigite a área do estado : \n");
 scanf("%f", &area1);
 
-printf("Digite o PIB em bilhõesdo estado : \n");
+printf("\nDigite o PIB em bilhõesdo estado : \n");
 scanf("%f", &pib1);
 
-printf("Digite os pontos turísticos do estado : \n");
+printf("\nDigite os pontos turísticos do estado : \n");
 scanf("%d", &pontos1);
 
 // Cálculo da densidade demográfica e do PIB per capita da primeira carta
@@ -88,25 +92,19 @@ printf("Vamos cadastrar os dados da segunda carta: \n");
 
 // Cadastro da segunda carta
 
-printf("\nDigite a letra do estado : \n");
-scanf(" %c", &estado2);
-
-printf("Digite o codigo do estado : \n");
-scanf("%s", codigo2);
-
-printf("Digite o nome do estado : \n");
+printf("\nDigite o nome do estado : \n");
 scanf("%s", nome2);
 
-printf("Digite a população do estado : \n");
+printf("\nDigite a população do estado : \n");
 scanf("%d", &populacao2);
 
-printf("Digite a área do estado : \n");
+printf("\nDigite a área do estado : \n");
 scanf("%f", &area2);
 
-printf("Digite o PIB em bilhõesdo estado : \n");
+printf("\nDigite o PIB em bilhõesdo estado : \n");
 scanf("%f", &pib2);
 
-printf("Digite os pontos turísticos do estado : \n");
+printf("\nDigite os pontos turísticos do estado : \n");
 scanf("%d", &pontos2);
 
 // Cálculo da densidade demográfica e do PIB per capita da segunda carta
@@ -122,9 +120,7 @@ printf("Exibindo os dados das duas cartas: \n");
 // Exibindo os dados das cartas
 
 printf("\nCarta 1: \n");
-printf("Estado: %c\n", estado1);
-printf("Código: %s\n", codigo1);
-printf("Nome do estado: %s\n", nome1);
+printf("\nNome do estado: %s\n", nome1);
 printf("População: %d\n", populacao1);
 printf("Área: %.2f Km²\n", area1);
 printf("PIB: %.2f bilhões de reais\n", pib1);
@@ -134,9 +130,7 @@ printf("PIB per capita: %.2f reais por habitante\n", pib_per_capita1);
 printf("Superpoder: %.2f\n", superpoder1);
 
 printf("\nCarta 2: \n");
-printf("Estado: %c\n", estado2);
-printf("Código: %s\n", codigo2);
-printf("Nome do estado: %s\n", nome2);
+printf("\nNome do estado: %s\n", nome2);
 printf("População: %d\n", populacao2);
 printf("Área: %.2f Km²\n", area2);
 printf("PIB: %.2f bilhões de reais\n", pib2);
@@ -150,8 +144,24 @@ printf("Será escolhido aleatoriamente dois atributos para comparar as cartas. \
 printf("A carta que prevalecer nos dois vence , se não...EMPATE! \n");
 printf("\n OBS : Na densidade demográfica , o menor valor prevalece. \n");
 
+
+ /* O código a seguir junto com o comando srand(time(0))
+
+   e o uso do swith, cria a lógica do jogo em que o computador
+
+   irá escolher um numero aleatório de 1 à 10, esse numero 
+
+   corresponderá a um atributo aleatório para comparar as
+
+   duas cartas, aqui com ajuda do [if else] será exibido a carta
+
+   que prevaleceu. Esse processo será feito duas vezes. */
+
+
 escolha_aleatoria1 = rand() % 6 + 1;
 escolha_aleatoria2 = rand() % 6 + 1;
+
+// Primeira escolha aleatória
 
 switch(escolha_aleatoria1) {
     case 1:
@@ -228,11 +238,7 @@ if (pib_per_capita1 > pib_per_capita2) {
     
 }
 
-
-
-
-
-
+ // Segunda escolha aleatória
 
   switch (escolha_aleatoria2) {
     case 1:
@@ -309,16 +315,27 @@ if (pib_per_capita1 > pib_per_capita2) {
     
 }
 
+/* O codigo a seguir com a ajuda dos operadores
+
+ de decisão e do [if else], cria a lógica em que será 
+
+ exibido a carta vencedora, onde somente a carta que
+
+ prevaleu nos dois atributos escolhidos vence
+
+ se ela prevaleceu em um, e não no outro é 
+
+ EMPATE. */
     
 
        if (resultado1 == 1 && resultado2 == 1) {
-          printf("\nA Carta 1 venceu, pois prevaleceu nos dois atributos");
+          printf("\nA Carta 1 venceu, pois prevaleceu nos dois atributos\n");
 
      }  else if (resultado1 == 0 && resultado2 == 0)  {
-          printf("\nA Carta 2 venceu, pois prevaleceu nos dois atributos"); 
+          printf("\nA Carta 2 venceu, pois prevaleceu nos dois atributos\n"); 
 
      }  else {
-          printf("\nEMPATE!, nenhuma carta prevaleceu nos dois atributos");
+          printf("\nEMPATE!, nenhuma carta prevaleceu nos dois atributos\n");
 
      }  
 
