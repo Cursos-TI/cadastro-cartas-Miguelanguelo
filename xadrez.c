@@ -18,6 +18,7 @@ float superpoder1 , superpoder2 ;
 // Variávies para calcular valores e resultados das cartas
 
 int opcao;
+int alea1 , alea2 , alea3;
 srand(time(0));
 
 /*  O código a seguir, cria um menu
@@ -138,8 +139,8 @@ printf("PIB per capita: %.2f reais por habitante\n", pib_per_capita2);
 printf("Superpoder: %.2f\n", superpoder2);
 
 printf("\n ### Chegou a hora da comparação ### ! \n");
-printf("\nSerá escolhido aleatoriamente dois atributos para comparar as cartas. \n");
-printf("A carta que prevalecer nos dois vence , se não...EMPATE! \n");
+printf("\nSerá escolhido aleatoriamente quatro atributos para comparar as cartas. \n");
+printf("A carta que tiver mais pontos vence , se os pontos forem iguais...EMPATE! \n");
 printf(" OBS : Na densidade demográfica , o menor valor prevalece. \n");
 
 
@@ -157,14 +158,13 @@ printf(" OBS : Na densidade demográfica , o menor valor prevalece. \n");
 
 
 char *vezes[4] = {"Primeiro" , "Segendo" , "terceiro" , "Quarto"};
-int *alea[1] = {rand() % 6 + 1};
-int carta1 = 0 , carta2 = 0;
-
+int alea[4] = {rand() % 6 + 1 , rand() % 6 + 1 , rand() % 6 + 1 , rand() % 6 + 1};
+int carta1 = 0, carta2 = 0;
 
 
 for(int i = 0 , x = 0; i <= 3 && x <= 3; i++ , x++) {
 
-switch(*alea[1]) {
+switch(alea [i]) {
     case 1:
         printf("\n %s Atributo escolhido: POPULAÇÂO\n" , vezes[x]);
 if (populacao1 > populacao2) {
@@ -259,7 +259,7 @@ if (pib_per_capita1 > pib_per_capita2) {
  se ela prevaleceu em um, e não no outro é 
 
  EMPATE. */
-    printf(" %d e %d\n ", carta1 , carta2);
+    
     
 
       if (carta1 > carta2) {
