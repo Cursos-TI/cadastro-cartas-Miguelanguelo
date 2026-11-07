@@ -73,7 +73,7 @@ scanf("%d", &populacao1);
 printf("\nDigite a área do estado : \n");
 scanf("%f", &area1);
 
-printf("\nDigite o PIB em bilhõesdo estado : \n");
+printf("\nDigite o PIB em bilhões do estado : \n");
 scanf("%f", &pib1);
 
 printf("\nDigite os pontos turísticos do estado : \n");
@@ -100,7 +100,7 @@ scanf("%d", &populacao2);
 printf("\nDigite a área do estado : \n");
 scanf("%f", &area2);
 
-printf("\nDigite o PIB em bilhõesdo estado : \n");
+printf("\nDigite o PIB em bilhões do estado : \n");
 scanf("%f", &pib2);
 
 printf("\nDigite os pontos turísticos do estado : \n");
